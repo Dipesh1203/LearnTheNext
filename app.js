@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const User = require("./models/user.model");
 const Profile = require("./models/profile.model");
-const Project = require("./models/projects.model");
 const bodyParser = require("body-parser");
 const profileRoute = require("./routes/profile");
 const userRouter = require("./routes/user");
