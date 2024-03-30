@@ -7,6 +7,11 @@ const profileSchema = new Schema({
     type: String,
     required: true,
   },
+  gender: {
+    type: String,
+    enum: ["Male", "Female", "Other"],
+    required: true,
+  },
   collegeId: {
     type: String,
     required: true,
@@ -15,25 +20,40 @@ const profileSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
+  mobileNo: {
     type: String,
+    minlength: 10,
+    maxlength: 10,
+    required: true,
   },
   dob: {
-    type: date,
+    type: Date,
     required: true,
   },
-  userType: {
+  course: {
     type: String,
-    enum: ("admin", "student", "staff"),
-    default: "student",
+    enum: ["BTech", "MTech", "MBA", "MCA", "BCA", "MBBS"],
     required: true,
   },
-  skills: {
-    type: [String],
+  branch: {
+    type: String,
+    required: true,
   },
-  projects: {
-    type: Schema.Types.ObjectId,
-    ref: "Project",
+  address: {
+    type: String,
+    required: true,
+  },
+  district: {
+    type: String,
+    required: true,
+  },
+  pincode: {
+    type: String,
+    required: true,
+  },
+  admissionYear: {
+    type: Number,
+    required: true,
   },
   owner: {
     type: Schema.Types.ObjectId,

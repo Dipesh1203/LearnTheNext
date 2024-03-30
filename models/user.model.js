@@ -8,8 +8,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  collegeid: {
-    type: string,
+  collegeId: {
+    type: String,
+    required: true,
+  },
+  userType: {
+    type: String,
+    enum: ["ADMIN", "STUDENT", "STAFF"],
+    default: "STUDENT",
     required: true,
   },
 });
