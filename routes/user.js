@@ -18,11 +18,12 @@ router
     saveRedirectUrl,
     passport.authenticate("local", {
       failureRedirect: "/login",
-      failureFlash: true,
+      successRedirect: "/home/all",
+      // failureFlash: true,
     }),
     wrapAsync(userController.login)
   );
 
-// router.get("/logout", userController.logout);
+router.get("/logout", userController.logout);
 
 module.exports = router;

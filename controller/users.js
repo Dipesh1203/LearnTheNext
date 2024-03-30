@@ -14,17 +14,18 @@ module.exports.signup = async (req, res) => {
     const newUser = new User({ username, email, collegeId, userType });
     console.log(newUser);
     const registeredUser = await User.register(newUser, password);
-    // console.log(registeredUser);
-
-    res.redirect("/login");
+    console.log(registeredUser);
+    res.redirect("/user/login");
   } catch (error) {
     // req.flash("error", error.message);
-    res.redirect(`/signup`);
+    res.redirect(`/user/signup`);
     // res.send(error);
   }
 };
 
-module.exports.renderLoginForm = (req, res) => {
+module.exports.renderLoginForm = async (req, res) => {
+  let { collegeId, password } = req.body;
+
   res.render("users/login.ejs");
 };
 
@@ -39,7 +40,7 @@ module.exports.logout = (req, res, next) => {
     if (err) {
       return next(err);
     }
-    req.flash("sucess", "you are logged out!");
+    // req.flash("sucess", "you are logged out!");
     res.redirect("/home");
   });
 };

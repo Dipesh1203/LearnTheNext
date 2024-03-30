@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono&family=Madimi+One&family=Oswald:wght@200..700&family=Roboto+Slab:wght@100..900&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    background: #19171d;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:20px 100px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    border-bottom: 2px solid #c0c1c0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: fixed;
+    background-color: #19171d;
+    
+}
+.logo{
+    font-size: 2em;
+    color: #c0c1c0;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #c0c1c0;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    
+}
+.navigation a::after{
+    content:'' ;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #10253f;
+    border-radius: 5px;
+    transform-origin: right;
+    transform:scaleX(0) ;
+    transition: transform .5s;
+}
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid  #c0c1c0;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #c0c1c0;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.navigation .btnLogin-popup:hover {
+    background: #10253f; 
+    color: #fff; 
+}
+
+.container{
+    height: 650px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    padding-right: 25rem;
+}
+#container{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    text-align: start;
+    animation-direction: alternate;
+}
+
+.text{
+    font-size: large;
+    font-weight: 600;
+    animation-delay: 6s;
+    margin-right: 25rem;
+}
+
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+.btnLogin-popup:hover{
+    border-color: #0b5ed7;
+}
+.login-register{
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register p a{
+    color: #a6b1b5;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+.list-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.events{
+    width: 30%;
+}
+.results{
+    width: 30%;
+}
+
+
+footer{
+    display: list-item;
+    color: #e7e6e7;
+    background: #19171d;
+    width: 100%;
+    padding-left: 5rem;
+    height: 25rem;
+    /* margin-top: 5rem; */
+}
+.wfm{
+    color: #fff;
+    font-size: 25px;
+    height: 50px;
+    width: 100%;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-weight: 600;
+}
+.meta{
+    margin-left: 2rem;
+}
+.lists{
+    display: flex;
+    align-items: inline;
+    justify-content: space-between;
+    background: #19171d;
+}
+.lists ul{
+    margin-right: 10rem;
+    margin-left: 10rem;
+    color: #fff;
+    font-size: 20px;
+    list-style-type:none ;
+    background: #19171d;
+}
+.lists li{
+    margin-top: 5px;
+    background: #19171d;
+    /* font-size: 20px; */
+}
+.lists ul li a{
+    color: #fff;
+    /* font-size: 20px; */
+    background: #19171d;
+    text-decoration: none;
+}
+.lists ul li a:hover{
+    text-decoration: underline;
+}
+
+
+/* content of site  */
+.disclaimer{
+    display: list-item;
+    color: #fff;
+}
+.whatsnew{
+    margin: 2rem 0 2rem 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30rem;
+    margin-bottom: 5rem;
+    
+}
+
+/* first container start  */
+.h1-left{
+    height: 25rem;
+    width: 50%;
+    /* opacity: 0; */
+    transition: opacity 1s ease;
+}
+.head{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 35px;
+}
+
+
+.h1-left h2{
+    margin-bottom: 2rem;
+    font-size: 30;
+}
+.h1-left p{
+    align-content: flex-start;
+    font-size: medium;
+    font-size: 25px;
+    font-weight: 500;
+}
+.img-right{
+    height: 25rem;
+    width: 40%;
+    background: url("20_02_2024-convocation_23657126.jpeg") center;
+    background-size: cover;
+    border: 2px solid #10253f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.whatsnew.active2{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* first container end  */
+.h1-right{
+    height: 25rem;
+    width: 40%;
+}
+.h1-right p{
+    align-content: flex-start;
+    font-size: medium;
+    font-size: 25px;
+    font-weight: 500;
+}
+.img-left{
+    height: 25rem;
+    width: 40%;
+    background: url("shutterstock_572013160.jpg") center;
+    background-size: cover;
+    border: 2px solid #10253f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.img-right2{
+    height: 25rem;
+    width: 40%;
+    background: url("Its-Important-to-Track-Your-Progress.png") center;
+    background-size: cover;
+    border: 2px solid #10253f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.img-left2{
+    height: 25rem;
+    width: 40%;
+    background: url("best-b-tech-courses-in-vadodara.webp") center;
+    background-size: cover;
+    border: 2px solid #10253f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+.img-right3{
+    height: 25rem;
+    width: 40%;
+    background: url("employee-engagement-and-employee-empowerment.png") center;
+    background-size: cover;
+    border: 2px solid #10253f;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
+
+.last-buttons{
+    background-color: #19171d;
+    color: #fff;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+.btn-group{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.btn-group button{
+    transition: 0.5s;
+    background-color: #19171d;
+    border: 2px solid #fff;
+}
+.btn-group button:hover{
+    color: #fff;
+    background: #10253f;
+}

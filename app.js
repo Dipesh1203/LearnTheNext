@@ -12,6 +12,8 @@ const profileRoute = require("./routes/profile");
 const userRouter = require("./routes/user");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const homeRoute = require("./routes/home");
+const eventRoute = require("./routes/event");
 
 app.use(cors());
 // parse application/x-www-form-urlencoded
@@ -39,12 +41,10 @@ passport.deserializeUser(User.deserializeUser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("/home", (req, res) => {
-  res.send("Home");
-});
+app.use("/event", eventRoute);
+app.use("/home", homeRoute);
 app.use("/profile", profileRoute);
 app.use("/user", userRouter);
-
 mongoose
   .connect("mongodb://127.0.0.1:27017/learnTheNext")
   .then(() => console.log("Connected!"))
