@@ -12,6 +12,7 @@ const profileRoute = require("./routes/profile");
 const userRouter = require("./routes/user");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const homeRoute = require("./routes/home");
 
 app.use(cors());
 // parse application/x-www-form-urlencoded
@@ -33,7 +34,28 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
-passport.use(new LocalStrategy(User.authenticate()));
+passport.use(
+  new LocalStrategy(
+    {
+      usernameField: "collegeId", // Specify the field to use for the username
+      passwordField: "password", // Specify the field to use for the password
+    },
+    async (collegeId, password, done) => {
+      try {
+        const user = await User.findOne({ collegeId: collegeId });
+        if (!user) {
+          return done(null, false, { message: "Incorrect college ID" });
+        }
+        if (!user.verifyPassword(password)) {
+          return done(null, false, { message: "Incorrect password" });
+        }
+        return done(null, user);
+      } catch (err) {
+        return done(err);
+      }
+    }
+  )
+);
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 app.use(passport.initialize());
@@ -42,9 +64,9 @@ app.use(passport.session());
 app.get("/home", (req, res) => {
   res.send("Home");
 });
+app.use("/home", homeRoute);
 app.use("/profile", profileRoute);
 app.use("/user", userRouter);
-
 mongoose
   .connect("mongodb://127.0.0.1:27017/learnTheNext")
   .then(() => console.log("Connected!"))

@@ -1,34 +1,48 @@
-<%- layout("/layouts/boilerPlate") %>
-<div class="login-container">
-  <h2>Login</h2>
-  <form action="#">
-    <div class="input-group">
-      <i class="fas fa-id-card"></i>
-      <input type="text" id="collegeID" name="collegeID" required />
-      <label for="collegeID">College ID</label>
-    </div>
-    <div class="input-group">
-      <i class="fas fa-lock"></i>
-      <input type="password" id="password" name="password" required />
-      <label for="password">Password</label>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="/user/login" method="POST">
+        <div class="input-group">
+          <i class="fas fa-id-card"></i>
+          <input type="text" id="collegeID" name="collegeID" required />
+          <label for="collegeID">College ID</label>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" name="password" required />
+          <label for="password">Password</label>
+        </div>
 
-    <div class="input-group">
-      <i class="fas fa-user"></i>
-      <select name="userType" id="userType">
-        <option value="admin">Admin</option>
-        <option value="user">Student</option>
-        <option value="staff">Staff</option>
-      </select>
-      <!-- <label for="userType">User Type</label> -->
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <select name="userType" id="userType">
+            <option value="admin">Admin</option>
+            <option value="user">Student</option>
+            <option value="staff">Staff</option>
+          </select>
+          <!-- <label for="userType">User Type</label> -->
+        </div>
+        <div class="input-group remember-me">
+          <input type="checkbox" id="remember" name="remember" />
+          <label for="remember">Remember me</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <div class="register-link">
+        <p>Don't have an account? <a href="/user/signup">Register here</a></p>
+      </div>
     </div>
-    <div class="input-group remember-me">
-      <input type="checkbox" id="remember" name="remember" />
-      <label for="remember">Remember me</label>
-    </div>
-    <button type="submit">Login</button>
-  </form>
-  <div class="register-link">
-    <p>Don't have an account? <a href="registration.html">Register here</a></p>
-  </div>
-</div>
+  </body>
+</html>
