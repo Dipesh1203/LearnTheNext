@@ -16,5 +16,7 @@ module.exports.createProfile = (req, res) => {
     address,
     district,
     pincode,
+    admissionYear,
   } = req.body;
+  let newProfile = new Profile({ re });
 };

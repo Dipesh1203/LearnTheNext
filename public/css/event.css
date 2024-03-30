@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    }
+    
+    body{
+    background-color: #e7e6e7;  
+    color: #10253f; 
+     
+    }
+    body::-webkit-scrollbar{
+        overflow: hidden;
+    }
+
+    .body{
+        display: flex;
+        min-height: 0vh;
+        /* border-bottom: 2px solid #fff; */
+        /* border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; */
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding:20px 100px ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+        border-bottom: 2px solid #0d0a13;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        position: fixed;
+        background-color: #a6b1b5;
+    }
+    .logo{
+        font-size: 2em;
+        color: #10253f;
+        user-select: none;
+    }
+    .navigation a{
+        position: relative;
+        font-size: 1.1em;
+        color: #10253f;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 40px;
+        
+    }
+    .navigation a::after{
+        content:'' ;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: #10253f;
+        border-radius: 5px;
+        transform-origin: right;
+        transform:scaleX(0) ;
+        transition: transform .5s;
+    }
+    .navigation a:hover::after{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    .navigation .btnLogin-popup {
+        width: 130px;
+        height: 50px;
+        background: transparent;
+        border: 2px solid  #0d0a13;
+        outline: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.1em;
+        color: #10253f;
+        font-weight: 500;
+        margin-left: 40px;
+        transition: .5s;
+    }
+    .navigation .btnLogin-popup:hover {
+        background: #10253f; 
+        color: #fff; 
+    }
+.search{
+    color:#0d0a13;
+    display: flex;
+    background-color:#e7e6e7;
+    margin-top: 5.8rem;
+    width:100%;
+    height: 7rem;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+.search input{
+    width: 50%;
+    margin-left: 22%;
+    height:2.5rem;
+    font-size: 1rem;
+    color:#0d0a13 ;
+    border: 2px solid #0d0a13;
+    border-radius: 5px;
+    padding-left: 2rem;
+}
+.search input::placeholder{
+    color:gray;
+
+}
+.search input:focus{
+    border: 5px solid #bc27ff;
+}
+.search button{
+    height: 2.4rem;
+    width: 5rem;
+    border-radius: 5px;
+    color: #a6b1b5;
+    background: linear-gradient(0deg, #10253f,#0d0a13); 
+}
+.container{
+    height: auto;
+    width: 100%;
+    display: list-item;
+    background-color: #e7e6e7;
+}
+.row{
+    height: 28.5rem;
+    width: 80%;
+    display: flex;
+    margin-left: 10%;
+    justify-content: space-between;
+}
+.cnt{
+    height: 24rem;
+    width: 15rem;
+    display: list-item;
+    color: #0d0a13;
+    /* background-color: #a6b1b5; */
+    border: 2px solid #0d0a13;
+    border-radius: 5px;
+    box-shadow:  0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 5px 0 0 5px;
+    overflow: hidden;
+}
+
+.bolt{
+    font-size: 20px;
+    font-weight: 600;
+}
+.img{
+    height: 15rem;
+    width: 14rem;
+    border: 2px solid #0d0a13;
+    border-radius: 5px;
+}
+.img1{
+    background: url("technology-event-poster-motion-design-template-ccb9571d9f70e6237e64e23d37afd8f7.jpg");
+    background-size: cover;
+}
+.img2{
+    background: url("sports-day-vector-illustration-sports-event-graphic-design-banner-poster-flyer-design_7888-976.avif");
+    background-size: cover;
+}
+.img3{
+    background: url("ESummit+Logo_Color+BG.png");
+    background-size: cover;
+}
+.img4{
+    background: url("tech-conference-motion-poster-design-template-c9069c85b38025df6afa89df4647d346.jpg");
+    background-size: contain;
+}
+.img5{
+    background: url("industrial-engineering-icon-vector-7331961.jpg");
+    background-size: cover;
+    height: 14rem;
+}
+.img6{
+    background: url("png-transparent-computer-icons-learning-flat-design-training-miscellaneous-text-orange.png");
+    background-size: contain;
+    height: 14rem;
+}
+.img7{
+    background: url("552568-200.png");
+    background-size: contain;
+    height: 14rem;
+}
+.img8{
+    background: url("A5bM9eFCIAEfJp6.jpg_large");
+    background-size: contain;
+    height: 14rem;
+}
+.img9{
+    background: url("placement-vector-icon-job-illustration-260nw-1729164913.webp");
+    background-size: cover;
+    height: 14rem;
+}
+.img10{
+    background: url("png-transparent-university-of-sulaymaniyah-university-for-development-studies-epoka-university-alumnus-alumni-association-alumni-blue-text-class-thumbnail.png");
+    background-size: contain;
+}
+.img11{
+    background: url("download.png");
+    background-size: cover;
+    height: 14rem;
+}
+.img12{
+    background: url("debate-or-discussion-icon-flat-vector-37593846.jpg");
+    background-size: cover;
+    height: 14rem;
+}
+.img13{
+    background: url("1054794-200.png");
+    background-size: cover;
+    height: 14rem;
+}
+.img14{
+    background: url("6493202.png");
+    background-size: cover;
+    height: 14rem;
+}
+.img15{
+    background: url("download\ \(1\).png");
+    background-size: cover;
+    height: 14rem;
+}
+.img16{
+    background: url("wellness-program-black-glyph-icon-vector-38690825.jpg");
+    background-size: cover;
+    height: 14rem;
+}
