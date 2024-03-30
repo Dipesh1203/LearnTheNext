@@ -5,8 +5,9 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const User = require("./models/user.model");
 const Profile = require("./models/profile.model");
-const Project = require("./models/projects.model");
 const bodyParser = require("body-parser");
+const ejsMate = require("ejs-mate");
+const path = require("path");
 const profileRoute = require("./routes/profile");
 const userRouter = require("./routes/user");
 const passport = require("passport");
@@ -28,7 +29,10 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
-
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.engine("ejs", ejsMate);
+app.use(express.static(path.join(__dirname, "/public")));
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -36,7 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get("/home", (req, res) => {
-  res.send(Home);
+  res.send("Home");
 });
 app.use("/profile", profileRoute);
 app.use("/user", userRouter);
